@@ -17,17 +17,16 @@ export const useTheme = () => {
 }
 
 export const ThemeProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-    const [theme, setTheme] = useState<string>(
-        localStorage.getItem('theme')
-        || (window.matchMedia('(prefers-color-scheme: dark)')
-            .matches ? 'dark' : 'light')
-    );
+    const [theme, setTheme] = useState<string>(() => {
+        const storedTheme = localStorage.getItem('theme');
+        return storedTheme ? storedTheme : 'light';
+    });
 
     const toggleTheme = () => {
         setTheme((prevTheme) => (prevTheme === "dark" ? "light" : "dark"));
     }
 
-    
+
     useEffect(() => {
         const root = window.document.documentElement;
         if (theme === "dark") {
