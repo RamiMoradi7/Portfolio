@@ -1,17 +1,17 @@
 export default function Skills(): JSX.Element {
     const skills = [
-        { name: "JavaScript", level: "90%", color: "#007acc" },
-        { name: "React", level: "85%", color: "#61dafb" },
-        { name: "Redux", level: "80%", color: "#764abc" },
-        { name: "Node.js", level: "75%", color: "#68a063" },
-        { name: "HTML & CSS", level: "95%", color: "#e34f26" },
-        { name: "Tailwind CSS", level: "85%", color: "#38bdf8" },
-        { name: "Communication", level: "92%", color: "#f4b400" },
-        { name: "Problem Solving", level: "88%", color: "#34a853" }
+        { name: "JavaScript / TypeScript", },
+        { name: "Node.js", },
+        { name: "React", },
+        { name: "Redux", },
+        { name: "HTML & CSS", },
+        { name: "Problem Solving", },
+        { name: "Tailwind CSS", },
+        { name: "Communication", },
     ];
 
     return (
-        <div data-aos="fade-in" className="flex justify-center items-center py-12 dark:bg-dark-main">
+        <div data-aos="fade-in" className="flex flex-wrap lg:w-4/5 sm:mx-auto sm:mb-2 -mx-2 p-4">
             <div className="max-w-xl mx-auto w-full text-center">
                 <h2 className="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white mb-2 font-raleway">
                     Some of My
@@ -19,38 +19,22 @@ export default function Skills(): JSX.Element {
                 <h2 className="text-4xl md:text-5xl font-extrabold text-green-600 dark:text-green-400 mb-10 font-raleway">
                     Skills
                 </h2>
-                {skills.map((skill, index) => (
-                    <div key={index} className="mb-8">
-                        <div className="flex justify-between items-center mb-2">
-                            <span className="text-lg text-gray-700 dark:text-gray-300 font-semibold">{skill.name}</span>
-                            <span className="text-lg font-semibold text-gray-700 dark:text-gray-300">{skill.level}</span>
-                        </div>
-                        <svg className="rc-progress-line" viewBox="0 0 100 1" preserveAspectRatio="none">
-                            <path
-                                className="rc-progress-line-trail"
-                                d="M 0.5,0.5 L 99.5,0.5"
-                                strokeLinecap="round"
-                                stroke="#D9D9D9"
-                                strokeWidth="1"
-                                fillOpacity="0"
-                            />
-                            <path
-                                className="rc-progress-line-path"
-                                d="M 0.5,0.5 L 99.5,0.5"
-                                strokeLinecap="round"
-                                stroke={skill.color}
-                                strokeWidth="3"
-                                fillOpacity="0"
-                                style={{
-                                    strokeDasharray: `${parseInt(skill.level) * 0.98}px, 100px`,
-                                    strokeDashoffset: "0px",
-                                    transition: "stroke-dashoffset 0.5s ease, stroke-dasharray 0.5s ease",
-                                }}
-                            />
-                        </svg>
-                    </div>
-                ))}
             </div>
+            {skills.map(({ name }, index) =>
+                <div
+                    key={index}
+                    data-aos="fade-in"
+                    data-aos-delay={index * 100}
+                    className="p-2 sm:w-1/2 w-full">
+                    <div className="bg-gray-100 dark:bg-dark-second rounded flex p-4 h-full items-center">
+                        <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3"
+                            className="text-green-500 w-6 h-6 flex-shrink-0 mr-4" viewBox="0 0 24 24">
+                            <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
+                            <path d="M22 4L12 14.01l-3-3"></path>
+                        </svg>
+                        <span className="font-medium dark:text-dark-txt">{name}</span>
+                    </div>
+                </div>)}
         </div>
     );
 }

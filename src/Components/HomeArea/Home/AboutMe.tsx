@@ -32,8 +32,7 @@ export default function AboutMe(): JSX.Element {
                             ensuring high-performance solutions. I have a strong learning ability, allowing me to adapt quickly to new technologies.
                         </p>
                         <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed">
-                            A team player who thrives under pressure, I strive to deliver quality products that exceed customer expectations.
-                        </p>
+                        I am a team player, work well under pressure and eager to create quality products that brings high value to customers.                        </p>
                     </div>
                 </div>
             </section>

@@ -5,8 +5,9 @@ import VacationsManagment from "../Assets/Images/VacationsManagment.png";
 // Header Nav Items:
 export const navItems = [
   { section: "about" },
-  { section: "services" },
+  { section: "experience" },
   { section: "projects" },
+  { section: "services" },
   { section: "contact" },
 ];
 

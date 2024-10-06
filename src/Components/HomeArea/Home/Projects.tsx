@@ -13,6 +13,7 @@ export const ProjectCard = ({ title, content, image, id, delay }: Project & { de
             data-aos-delay={delay}
         >
             <img src={image} alt={title} className="w-full h-70 object-cover" />
+
             <div className="p-5 dark:bg-dark-second h-full">
                 <h3 className="text-xl font-semibold text-zinc-800 dark:text-dark-txt">{title}</h3>
                 <p className="text-gray-600 dark:text-gray-400 mt-2">{content}</p>
