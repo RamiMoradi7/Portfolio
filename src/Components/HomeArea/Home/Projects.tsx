@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { Project, projects } from "../../../Utils/Constants";
 
-const ProjectCard = ({ title, content, image, id, delay }: Project & { delay: number }) => {
+export const ProjectCard = ({ title, content, image, id, delay }: Project & { delay: number }) => {
     const navigate = useNavigate();
 
     return (
@@ -28,7 +28,7 @@ export default function Projects(): JSX.Element {
                 <h2 className="mb-3 text-center font-header text-4xl font-thin uppercase text-zinc-800 dark:text-green-400 sm:text-5xl lg:text-6xl">
                     My Projects
                 </h2>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                     {projects.map((project, index) => (
                         <ProjectCard
                             key={project.id}

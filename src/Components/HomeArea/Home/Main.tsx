@@ -1,4 +1,5 @@
 import { useTitle } from "../../../hooks/useTitle";
+import Experience from "../../Experience/Experience";
 import AboutMe from "./AboutMe";
 import ContactMe from "./ContactMe";
 import HeroSection from "./HeroSection";
@@ -14,9 +15,11 @@ export default function Main(): JSX.Element {
                 <HeroSection />
                 <AboutMe />
                 <div className="border-b border-gray-300 dark:border-gray-700"></div>
-                <Services />
+                <Experience />
                 <div className="border-b border-gray-300 dark:border-gray-700"></div>
                 <Projects />
+                <div className="border-b border-gray-300 dark:border-gray-700"></div>
+                <Services />
                 <div className="border-b border-gray-300 dark:border-gray-700"></div>
                 <ContactMe />
             </main>
