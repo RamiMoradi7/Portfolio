@@ -1,0 +1,184 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap');
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+.contrast {
+  background-color: black;
+  color: white;
+}
+
+body {
+  scroll-snap-type: y mandatory;
+  max-width: 100%;
+}
+
+section {
+  scroll-snap-align: start;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+.dark {
+  background-color: rgba(24, 25, 26, var(--tw-bg-opacity));
+}
+
+.dark .dark\:bg-dark-main {
+  --tw-bg-opacity: 1;
+  background-color: rgba(24, 25, 26, var(--tw-bg-opacity));
+}
+
+.dark .dark\:bg-dark-second {
+  --tw-bg-opacity: 1;
+  background-color: rgba(36, 37, 38, var(--tw-bg-opacity));
+}
+
+.dark .dark\:bg-dark-third {
+  --tw-bg-opacity: 1;
+  background-color: rgba(58, 59, 60, var(--tw-bg-opacity));
+}
+
+.dark .dark\:hover\:bg-dark-second:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgba(36, 37, 38, var(--tw-bg-opacity));
+}
+
+.dark .dark\:hover\:bg-dark-third:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgba(58, 59, 60, var(--tw-bg-opacity));
+}
+
+.dark .dark\:border-blue-700 {
+  --tw-border-opacity: 1;
+  border-color: rgba(29, 78, 216, var(--tw-border-opacity));
+}
+
+.dark .dark\:border-dark-second {
+  --tw-border-opacity: 1;
+  border-color: rgba(36, 37, 38, var(--tw-border-opacity));
+}
+
+.dark .dark\:border-dark-third {
+  --tw-border-opacity: 1;
+  border-color: rgba(58, 59, 60, var(--tw-border-opacity));
+}
+.dark .dark\:text-dark-txt {
+  --tw-text-opacity: 1;
+  color: rgba(184, 187, 191, var(--tw-text-opacity));
+}
+
+.dark .dark\:ring-dark-txt {
+  --tw-text-opacity: 1;
+  color: rgba(184, 187, 191, var(--tw-text-opacity));
+}
+
+.high-contrast {
+  background-color: #000 !important;
+  color: #fff !important;
+  filter: contrast(200%);
+}
+
+.high-contrast a {
+  color: #00ff00 !important;
+}
+
+/* Hide non-essential elements visually in screen reader mode */
+.screen-reader-mode .non-essential {
+  display: none;
+}
+
+/* Improve focus outline for better accessibility */
+.screen-reader-mode :focus {
+  outline: 3px solid #ffcc00; /* Bright and clear focus outline */
+  outline-offset: 3px;
+  box-shadow: 0 0 8px rgba(255, 204, 0, 0.6); /* Add subtle glow for better visibility */
+}
+
+/* Focus on high contrast and legibility */
+.screen-reader-mode a,
+.screen-reader-mode button,
+.screen-reader-mode input,
+.screen-reader-mode textarea {
+  background-color: #007bff; /* High visibility background color */
+  color: #ffffff; /* Ensure text contrast */
+  font-size: 1.1em; /* Slightly increased font size */
+  border-radius: 4px; /* Rounded corners for a modern look */
+  padding: 8px 12px; /* Adequate padding for touch accessibility */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transitions for better UX */
+}
+
+.screen-reader-mode a:hover,
+.screen-reader-mode button:hover,
+.screen-reader-mode input:focus,
+.screen-reader-mode textarea:focus {
+  background-color: #0056b3; /* Darker hover/focus state for interactive elements */
+  color: #ffffff;
+}
+
+/* Announce important sections using landmarks with modern visuals */
+.screen-reader-mode [role="banner"],
+.screen-reader-mode [role="main"],
+.screen-reader-mode [role="contentinfo"],
+.screen-reader-mode [role="navigation"] {
+  border: 2px solid #00ff00; /* High contrast borders for landmarks */
+  border-radius: 6px; /* Rounded edges for a softer appearance */
+  padding: 8px; /* Add spacing around content */
+  margin: 8px 0; /* Vertical spacing between landmarks */
+  background-color: rgba(
+    0,
+    128,
+    0,
+    0.1
+  ); /* Subtle green background for landmarks */
+}
+
+/* Enhance link visibility with modern styles */
+.screen-reader-mode a {
+  text-decoration: underline;
+  color: #ff9900;
+  font-weight: bold; /* Bold for emphasis */
+  transition: color 0.3s ease; /* Smooth color change on hover */
+}
+
+.screen-reader-mode a:hover {
+  color: #ff6600; /* Darker orange on hover */
+}
+
+/* Focus states for interactive elements to ensure visibility */
+.screen-reader-mode button:focus,
+.screen-reader-mode input:focus,
+.screen-reader-mode textarea:focus {
+  outline: 2px solid #00ff00; /* High contrast outline */
+  box-shadow: 0 0 5px rgba(0, 255, 0, 0.5); /* Subtle glow for focus */
+}
+
+/* General improvements for buttons and interactive elements */
+.screen-reader-mode button {
+  background-color: #007bff; /* Vibrant blue */
+  border: none; /* Remove default borders */
+  padding: 10px 15px;
+  font-size: 1em;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.screen-reader-mode button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+.focus-highlight *:focus {
+  outline: 3px solid yellow !important;
+  box-shadow: 0 0 10px 3px yellow !important;
+}
+.paused-animations {
+  animation-play-state: paused !important;
+  transition: none !important; /* Disable transitions */
+}
