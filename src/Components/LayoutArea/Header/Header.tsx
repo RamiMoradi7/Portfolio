@@ -11,22 +11,15 @@ export default function Header(): JSX.Element {
     const navigate = useNavigate();
 
     const scrollToSection = (section: string) => {
-        if (window.location.pathname !== "/") {
-            navigate("/");
-            setTimeout(() => {
-                const element = document.getElementById(section);
-                if (element) {
-                    setActiveSection(section);
-                    element.scrollIntoView({ behavior: "smooth", block: "start" });
-                }
-                setIsMenuOpen(false);
-            }, 300);
-        } else {
-            const element = document.getElementById(section);
-            if (element) {
+        if (section) {
+            if (window.location.pathname !== "") {
+                navigate("/");
                 setActiveSection(section);
-                element.scrollIntoView({ behavior: "smooth", block: "start" });
+                setIsMenuOpen(false);
+
             }
+        } else {
+            setActiveSection(section);
             setIsMenuOpen(false);
         }
     };
