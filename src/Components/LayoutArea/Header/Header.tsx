@@ -10,14 +10,14 @@ export default function Header(): JSX.Element {
     const { activeSection, setActiveSection } = useActiveSection();
     const navigate = useNavigate();
 
-     const scrollToSection = (section: string) => {
+    const scrollToSection = (section: string) => {
         if (window.location.pathname !== "/") {
             navigate("/");
             setTimeout(() => {
                 const element = document.getElementById(section);
                 if (element) {
                     setActiveSection(section);
-                    element.scrollIntoView({ behavior: "smooth" });
+                    element.scrollIntoView({ behavior: "smooth", block: "start" });
                 }
                 setIsMenuOpen(false);
             }, 300);
@@ -25,7 +25,7 @@ export default function Header(): JSX.Element {
             const element = document.getElementById(section);
             if (element) {
                 setActiveSection(section);
-                element.scrollIntoView({ behavior: "smooth" });
+                element.scrollIntoView({ behavior: "smooth", block: "start" });
             }
             setIsMenuOpen(false);
         }
