@@ -23,7 +23,7 @@ export default function HeroSection(): JSX.Element {
     return (
         <section className=" relative min-h-screen flex flex-col justify-center items-center  dark:bg-dark-main dark:text-dark-txt lg:p-20 md:p-8 sm:p-2" data-aos="fade-in">
             <div className="dark:bg-dark-second container mx-auto text-center rounded-xl">
-                <div className="relative dark:bg-dark-second rounded-full">
+                <div className="relative rounded-xl">
                     <img
                         className="rounded-full border-4 border-green-600 shadow-2xl h-64 w-64 mx-auto transition-transform duration-500 hover:scale-110 hover:rotate-2"
                         src={profileImage}

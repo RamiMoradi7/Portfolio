@@ -49,7 +49,7 @@ function Routing(): JSX.Element {
     useScrollTop();
 
     return (
-        <div className="Routing">
+        <div className="dark:bg-dark-second">
             <Routes>
                 {routes.map
                     (({ path, element }) =>

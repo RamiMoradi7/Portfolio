@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import AMFitness from "../../Assets/Images/AMFitness.png"
+import ClickMeBtn from "../HomeArea/Home/ClickMeBtn";
 
 export default function Experience(): JSX.Element {
     const navigate = useNavigate();
@@ -24,6 +25,7 @@ export default function Experience(): JSX.Element {
                                 <h3 className="text-xl font-semibold text-zinc-800 dark:text-green-400">
                                     Fitness Tracker Application (Freelance)
                                 </h3>
+                                <ClickMeBtn />
                                 <p className="text-gray-600 dark:text-gray-400 mt-2 text-lg lg:text-base leading-relaxed">
                                     Developed a full-featured fitness tracker using React, Redux, Node.js, and TypeScript, with a scalable Express.js and MongoDB backend.
                                 </p>

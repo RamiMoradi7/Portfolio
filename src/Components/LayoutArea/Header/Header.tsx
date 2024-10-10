@@ -10,7 +10,7 @@ export default function Header(): JSX.Element {
     const { activeSection, setActiveSection } = useActiveSection();
     const navigate = useNavigate();
 
-    const scrollToSection = (section: string) => {
+     const scrollToSection = (section: string) => {
         if (window.location.pathname !== "/") {
             navigate("/");
             setTimeout(() => {
@@ -20,7 +20,7 @@ export default function Header(): JSX.Element {
                     element.scrollIntoView({ behavior: "smooth" });
                 }
                 setIsMenuOpen(false);
-            }, 50);
+            }, 300);
         } else {
             const element = document.getElementById(section);
             if (element) {

@@ -23,14 +23,14 @@ function Layout(): JSX.Element {
         <div className="bg-zinc-100 text-zinc-900 dark:bg-dark-main dark:text-white  min-h-screen">
             <Header />
             <Container>
-                <div className="mt-20 lg:mt-10 dark:bg-dark-second">
+                <div className="mt-28 sm:mt-20 md:mt-20 lg:mt-10">
                     <Toaster position="top-right" />
                     <AccessibilityMenu />
                     <ScrollToTop />
                     <Routing />
                     <Copyrights />
                 </div>
-            </Container>
+            </Container>    
         </div>
     );
 }

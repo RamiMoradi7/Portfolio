@@ -6,6 +6,7 @@ type InputProps = {
     name: string;
     type: "text" | "email" | "password" | "textarea" | "number";
     placeholder: string;
+    minLength?: number
     error?: string
 }
 
@@ -14,6 +15,7 @@ export default function Input({
     name,
     placeholder,
     type,
+    minLength,
     error
 }: InputProps): JSX.Element {
 
@@ -28,6 +30,7 @@ export default function Input({
                 className={`w-full mt-2 px-4 py-2 bg-transparent border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-300 text-gray-900 dark:text-gray-200 border-gray-300 dark:border-gray-700 ${type === "textarea" ? "resize-y h-32" : ""}`}
                 placeholder={placeholder}
                 {...control.register(name.toLowerCase() as keyof ContactForm)}
+                minLength={minLength}
             />
         </div>
     )

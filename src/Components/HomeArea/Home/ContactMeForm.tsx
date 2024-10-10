@@ -29,27 +29,31 @@ export default function ContactMeForm(): JSX.Element {
         <form onSubmit={handleSubmit(sendEmail)}>
             <Input
                 control={control}
-                name="Name"
+                name="name"
                 placeholder="Your Name"
                 type="text"
+                minLength={2}
+
             />
             <Input
                 control={control}
-                name="Email"
+                name="email"
                 placeholder="Your Email"
                 type="email"
             />
             <Input
                 control={control}
-                name="Subject"
+                name="subject"
                 placeholder="Hiring!"
                 type="text"
+                minLength={2}
             />
             <Input
                 control={control}
-                name="Message"
+                name="message"
                 placeholder="Your Message"
                 type="textarea"
+                minLength={3}
             />
             <div className="text-center">
                 <button
