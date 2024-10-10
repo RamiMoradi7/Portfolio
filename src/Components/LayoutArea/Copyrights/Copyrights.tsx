@@ -7,8 +7,9 @@ type ListItem = {
 
 const listItems: ListItem[] = [
     { section: "about", label: "About" },
-    { section: "services", label: "Services" },
+    { section: "experience", label: "Experience" },
     { section: "projects", label: "Projects" },
+    { section: "services", label: "Services" },
     { section: "contact", label: "Contact" },
 ];
 

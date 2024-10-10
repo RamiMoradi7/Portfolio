@@ -35,7 +35,7 @@ export const useActiveSection = () => {
     const section = document.getElementById(id);
     if (section) {
       setIsScrolling(true);
-      section.scrollIntoView({ behavior: "smooth" });
+      section.scrollIntoView({ behavior: "smooth", block: "start" });
 
       setTimeout(() => {
         setActiveSection(id);
