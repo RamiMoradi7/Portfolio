@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { replace, useLocation, useNavigate } from "react-router-dom";
 
 export const useActiveSection = () => {
   const [activeSection, setActiveSection] = useState<string>("");
@@ -9,7 +9,9 @@ export const useActiveSection = () => {
 
   useEffect(() => {
     const sections = document.querySelectorAll("section");
-    const observerOptions = { threshold: 0.5 };
+    const observerOptions = {
+      threshold: 0.5,
+    };
 
     const observer = new IntersectionObserver((entries) => {
       if (!isScrolling) {
@@ -21,31 +23,37 @@ export const useActiveSection = () => {
       }
     }, observerOptions);
 
-    sections.forEach((section) => observer.observe(section));
+    sections.forEach((section) => {
+      observer.observe(section);
+    });
 
     return () => {
-      sections.forEach((section) => observer.unobserve(section));
+      sections.forEach((section) => {
+        observer.unobserve(section);
+      });
     };
   }, [isScrolling]);
 
   const scrollToSection = (id: string) => {
-    const performScroll = () => {
-      const section = document.getElementById(id);
-      if (section) {
-        setIsScrolling(true);
-        section.scrollIntoView({ behavior: "smooth", block: "start" });
-
-        setTimeout(() => setIsScrolling(false), 500);
-      }
-    };
-
+    const section = document.getElementById(id);
     if (location.pathname !== "/") {
       navigate("/", { replace: true });
-      setTimeout(performScroll, 100); 
-    } else {
-      performScroll();
+      const homeSection = document.getElementById(id);
+      if (homeSection) {
+        homeSection.scrollIntoView({ behavior: "smooth", block: "start" });
+        setActiveSection(id);
+        setIsScrolling(false);
+      }
+    } else if (section) {
+      setIsScrolling(true);
+      section.scrollIntoView({ behavior: "smooth", block: "start" });
+
+      setTimeout(() => {
+        setActiveSection(id);
+        setIsScrolling(false);
+      }, 500);
     }
   };
 
-  return { activeSection, setActiveSection: scrollToSection };
+  return { activeSection, scrollToSection };
 };

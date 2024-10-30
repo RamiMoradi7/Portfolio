@@ -7,16 +7,10 @@ import { useNavigate } from "react-router-dom";
 
 export default function Header(): JSX.Element {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const { activeSection, setActiveSection } = useActiveSection();
+    const { activeSection, scrollToSection } = useActiveSection();
     const navigate = useNavigate();
 
-    const scrollToSection = (section: string) => {
-        if (section) {
-            navigate("/");
-            setActiveSection(section);
-            setIsMenuOpen(false);
-        }
-    };
+
 
 
     return (
@@ -34,7 +28,9 @@ export default function Header(): JSX.Element {
                                     key={section}
                                     section={section}
                                     activeSection={activeSection}
-                                    onClick={() => scrollToSection(section)}
+                                    onClick={() => {
+                                        scrollToSection(section)
+                                    }}
                                 />
                             ))}
                         </ul>
@@ -78,7 +74,10 @@ export default function Header(): JSX.Element {
                             key={section}
                             section={section}
                             activeSection={activeSection}
-                            onClick={() => scrollToSection(section)}
+                            onClick={() => {
+                                setIsMenuOpen(false)
+                                scrollToSection(section)
+                            }}
                         />
                     ))}
                 </ul>
