@@ -1,8 +1,12 @@
 import { useEffect, useState } from "react";
+import { replace, useLocation, useNavigate } from "react-router-dom";
 
 export const useActiveSection = () => {
   const [activeSection, setActiveSection] = useState<string>("");
   const [isScrolling, setIsScrolling] = useState<boolean>(false);
+  const location = useLocation();
+  const navigate = useNavigate();
+
   useEffect(() => {
     const sections = document.querySelectorAll("section");
 
@@ -33,7 +37,18 @@ export const useActiveSection = () => {
 
   const scrollToSection = (id: string) => {
     const section = document.getElementById(id);
-    if (section) {
+    console.log(id);
+    if (location.pathname !== "/") {
+      navigate("/", { replace: true });
+      setTimeout(() => {
+        const homeSection = document.getElementById(id);
+        if (homeSection) {
+          homeSection.scrollIntoView({ behavior: "smooth", block: "start" });
+          setActiveSection(id);
+          setIsScrolling(false);
+        }
+      }, 100);
+    } else if (section) {
       setIsScrolling(true);
       section.scrollIntoView({ behavior: "smooth", block: "start" });
 

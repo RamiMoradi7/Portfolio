@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import { scrollToSection } from "../../../Utils/ScrollToSection";
 
 type ListItem = {
@@ -14,6 +15,8 @@ const listItems: ListItem[] = [
 ];
 
 function Copyrights(): JSX.Element {
+    const navigate = useNavigate();
+
     return (
         <footer className="bg-gray-100 dark:bg-dark-second text-gray-800 dark:text-white lg:p-20 p-10">
             <section className="container mx-auto">
@@ -30,7 +33,10 @@ function Copyrights(): JSX.Element {
                                 <li key={item.section} className="m-3 transition-colors duration-300">
                                     <a
                                         href={`#${item.section}`}
-                                        onClick={(e) => scrollToSection(e, item.section)}
+                                        onClick={(e) => {
+                                            navigate(`/#${item.section}`)
+                                        }}
+
                                         className="hover:text-green-500 dark:hover:text-green-400 text-gray-600 dark:text-gray-300"
                                     >
                                         {item.label}
@@ -44,7 +50,7 @@ function Copyrights(): JSX.Element {
             <div className="text-center mt-10">
                 <p className="text-sm text-gray-600 dark:text-gray-400">&copy; {new Date().getFullYear()} Rami Moradi. All rights reserved.</p>
             </div>
-        </footer>
+        </footer >
     );
 }
 
