@@ -12,13 +12,7 @@ export default function Header(): JSX.Element {
 
     const scrollToSection = (section: string) => {
         if (section) {
-            if (window.location.pathname !== "") {
-                navigate("/");
-                setActiveSection(section);
-                setIsMenuOpen(false);
-
-            }
-        } else {
+            navigate("/");
             setActiveSection(section);
             setIsMenuOpen(false);
         }

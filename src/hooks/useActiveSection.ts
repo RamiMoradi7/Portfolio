@@ -37,7 +37,6 @@ export const useActiveSection = () => {
 
   const scrollToSection = (id: string) => {
     const section = document.getElementById(id);
-    console.log(id);
     if (location.pathname !== "/") {
       navigate("/", { replace: true });
       setTimeout(() => {
