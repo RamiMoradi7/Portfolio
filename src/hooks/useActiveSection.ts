@@ -10,7 +10,7 @@ export const useActiveSection = () => {
   useEffect(() => {
     const sections = document.querySelectorAll("section");
     const observerOptions = {
-      threshold: 0.5,
+      threshold: 0.3,
     };
 
     const observer = new IntersectionObserver((entries) => {
@@ -36,6 +36,7 @@ export const useActiveSection = () => {
 
   const scrollToSection = (id: string) => {
     const section = document.getElementById(id);
+    console.log(section);
     if (location.pathname !== "/") {
       navigate("/", { replace: true });
       const homeSection = document.getElementById(id);

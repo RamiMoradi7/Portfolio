@@ -23,7 +23,7 @@ export default function AMFitness(): JSX.Element {
                 </a>
             </div>
             <ImageCarousel data={amFitnessData} />
-            
+
             <div className="flex items-center justify-center mt-4">
                 <ul className="list-none space-y-8 text-base sm:text-lg text-gray-700 dark:text-gray-300 w-full max-w-6xl">
                     {projectDetails.map(({ title, images }, index) => (
@@ -38,6 +38,7 @@ export default function AMFitness(): JSX.Element {
                                                 <div data-aos={imgIndex % 2 === 0 ? "fade-right" : "fade-left"}>
                                                     <img
                                                         src={image}
+                                                        loading='lazy'
                                                         alt={`Image ${imgIndex + 1}`}
                                                         className="transition-transform duration-500 transform sm:w-1/2 lg:w-full rounded shadow-md mb-2 sm:mb-0 cursor-pointer"
                                                         style={{ maxWidth: '100%', height: 'auto' }}

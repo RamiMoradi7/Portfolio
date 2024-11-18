@@ -10,9 +10,6 @@ export default function Header(): JSX.Element {
     const { activeSection, scrollToSection } = useActiveSection();
     const navigate = useNavigate();
 
-
-
-
     return (
         <div className="fixed w-full dark:bg-dark-second dark:text-dark-txt bg-zinc-100 shadow-md z-50">
             <header className="py-4 px-6 md:px-10 border-b border-gray-200">
@@ -80,6 +77,7 @@ export default function Header(): JSX.Element {
                             }}
                         />
                     ))}
+               
                 </ul>
             </nav>
         </div>

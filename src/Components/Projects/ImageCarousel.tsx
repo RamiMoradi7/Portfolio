@@ -1,5 +1,6 @@
 
 import { useState } from "react";
+import Zoom from 'react-medium-image-zoom';
 
 type ImageData = {
     image: string;
@@ -7,7 +8,7 @@ type ImageData = {
 };
 
 type ImageCarouselProps = {
-    data: ImageData[]; 
+    data: ImageData[];
 };
 
 export default function ImageCarousel({ data }: ImageCarouselProps): JSX.Element {
@@ -26,16 +27,18 @@ export default function ImageCarousel({ data }: ImageCarouselProps): JSX.Element
     };
 
     return (
-        <div className="max-w-5xl mx-auto mt-4">
+        <div className="max-w-5xl  mx-auto mt-4">
             <div id="default-carousel" className="relative rounded-lg overflow-hidden shadow-lg" data-carousel="static">
                 <div className="relative h-80 md:h-96" data-carousel-inner>
                     {data.map((item, index) => (
                         <div
                             key={index}
-                            className={`absolute inset-0 duration-700 ease-in-out transition-all transform ${activeIndex === index ? "opacity-100" : "opacity-0"}`}
+                            className={`absolute inset-0 duration-700 ease-in-out transition-all transform ${activeIndex === index ? "opacity-100" : "opacity-0 hidden"}`}
                             data-carousel-item={activeIndex === index ? "active" : ""}
                         >
-                            <img src={item.image} className="object-cover w-full h-full" alt={`Slide ${index + 1}`} />
+                            <Zoom>
+                                <img src={item.image} loading="lazy" className="object-cover w-full h-full" alt={`Slide ${index + 1}`} />
+                            </Zoom>
                             <div className="absolute bottom-2 left-0 w-full p-4 bg-black bg-opacity-50 text-white text-center text-lg">
                                 {item.title}
                             </div>
