@@ -8,13 +8,12 @@ import { useNavigate } from "react-router-dom";
 export default function Header(): JSX.Element {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const { activeSection, scrollToSection } = useActiveSection();
-    const navigate = useNavigate();
-
+    console.log(activeSection)
     return (
         <div className="fixed w-full dark:bg-dark-second dark:text-dark-txt bg-zinc-100 shadow-md z-50">
             <header className="py-4 px-6 md:px-10 border-b border-gray-200">
                 <div className="container mx-auto flex justify-between items-center">
-                    <p onClick={() => navigate("/")} className="dark:text-green-400 font-raleway cursor-pointer text-xl font-bold tracking-tight text-gray-800 dark:text-dark-txt">
+                    <p onClick={() => scrollToSection("hero")} className="dark:text-green-400 font-raleway cursor-pointer text-xl font-bold tracking-tight text-gray-800 dark:text-dark-txt">
                         Rami's Portfolio
                     </p>
 
@@ -77,7 +76,7 @@ export default function Header(): JSX.Element {
                             }}
                         />
                     ))}
-               
+
                 </ul>
             </nav>
         </div>

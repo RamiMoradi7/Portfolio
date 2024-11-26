@@ -2,7 +2,7 @@ import ContactMeForm from "./ContactMeForm";
 
 export default function ContactMe(): JSX.Element {
     return (
-        <section data-aos="zoom-in" className="sm:p-20 p-8 bg-gray-100 dark:bg-dark-main" id="contact">
+        <section id="contact" className="sm:p-20  p-8 bg-gray-100 dark:bg-dark-main">
             <div className="container mx-auto">
                 <h2 className=" mb-2 text-center font-header text-4xl font-thin uppercase text-zinc-800 dark:text-green-400 sm:text-5xl lg:text-6xl">
                     Contact Me

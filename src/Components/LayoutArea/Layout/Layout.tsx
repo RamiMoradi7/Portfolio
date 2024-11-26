@@ -14,8 +14,8 @@ function Layout(): JSX.Element {
     useEffect(() => {
         AOS.init({
             delay: 0,
-            duration: 600,
-            once: false,
+            duration: 400,
+            once: true,
 
         });
     }, [])
@@ -30,7 +30,7 @@ function Layout(): JSX.Element {
                     <Routing />
                     <Copyrights />
                 </div>
-            </Container>    
+            </Container>
         </div>
     );
 }

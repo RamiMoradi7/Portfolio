@@ -6,6 +6,7 @@ type NavItemProps = {
 
 export default function NavItem({ section, activeSection, onClick }: NavItemProps): JSX.Element {
     const isActive = activeSection === section;
+  
 
     return (
         <li

@@ -3,7 +3,7 @@ import sectionImage from "../../../Assets/Images/RamiProfile.jpg";
 export default function AboutMe(): JSX.Element {
     return (
         <>
-            <section id="about" className="sm:p-10 lg:p-20 bg-gray-50 dark:bg-dark-second dark:text-dark-txt" data-aos="fade-down">
+            <section id="about" className=" sm:p-10 lg:p-20 bg-gray-50 dark:bg-dark-second dark:text-dark-txt" data-aos="fade-down">
                 <h2 className="ml-4 font-raleway  text-5xl sm:text-3xl lg:text-5xl dark:text-green-500 uppercase mb-4">
                     WHO AM I?
                 </h2>

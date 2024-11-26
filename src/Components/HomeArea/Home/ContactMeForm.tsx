@@ -1,8 +1,8 @@
 import { useForm } from "react-hook-form"
 import emailjs from 'emailjs-com';
-import { publicKey, serviceID, templateID } from "../../../Utils/Constants";
 import Input from "./Input";
 import toast from "react-hot-toast";
+import { PUBLIC_KEY, SERVICE_ID, TEMPLATE_ID } from "../../../Utils/Constants";
 
 export type ContactForm = {
     name: string;
@@ -15,7 +15,7 @@ export default function ContactMeForm(): JSX.Element {
     const { handleSubmit, control, reset, formState: { isSubmitting } } = useForm<ContactForm>()
     const sendEmail = async (data: ContactForm) => {
         try {
-            await emailjs.send(serviceID, templateID, data, publicKey)
+            await emailjs.send(SERVICE_ID, TEMPLATE_ID, data, PUBLIC_KEY)
             toast.success('Your Message sent successfully!');
             reset();
         } catch (err: any) {
@@ -50,7 +50,7 @@ export default function ContactMeForm(): JSX.Element {
             />
             <Input
                 control={control}
-                name="Message"
+                name="Content"
                 placeholder="Your Message"
                 type="textarea"
                 minLength={3}

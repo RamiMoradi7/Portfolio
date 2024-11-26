@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { replace, useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export const useActiveSection = () => {
   const [activeSection, setActiveSection] = useState<string>("");
@@ -7,10 +7,11 @@ export const useActiveSection = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
+
   useEffect(() => {
     const sections = document.querySelectorAll("section");
     const observerOptions = {
-      threshold: 0.3,
+      threshold: 0.7,
     };
 
     const observer = new IntersectionObserver((entries) => {
@@ -36,23 +37,15 @@ export const useActiveSection = () => {
 
   const scrollToSection = (id: string) => {
     const section = document.getElementById(id);
-    console.log(section);
     if (location.pathname !== "/") {
-      navigate("/", { replace: true });
-      const homeSection = document.getElementById(id);
-      if (homeSection) {
-        homeSection.scrollIntoView({ behavior: "smooth", block: "start" });
-        setActiveSection(id);
-        setIsScrolling(false);
-      }
-    } else if (section) {
-      setIsScrolling(true);
+      navigate(`/#${id}`);
+      setActiveSection(id);
+      setIsScrolling(false);
+    }
+    if (section) {
       section.scrollIntoView({ behavior: "smooth", block: "start" });
-
-      setTimeout(() => {
-        setActiveSection(id);
-        setIsScrolling(false);
-      }, 500);
+      setActiveSection(id);
+      setIsScrolling(false);
     }
   };
 

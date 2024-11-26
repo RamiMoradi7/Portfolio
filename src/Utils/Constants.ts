@@ -43,6 +43,6 @@ export const projects: Project[] = [
   },
 ];
 
-export const templateID = "template_caj6yju";
-export const serviceID = "service_6eehins";
-export const publicKey = "Z9geDf8zhi4GhEcXA";
+export const TEMPLATE_ID = process.env.REACT_APP_TEMPLATE_ID!;
+export const SERVICE_ID = process.env.REACT_APP_SERVICE_ID!;
+export const PUBLIC_KEY = process.env.REACT_APP_PUBLIC_KEY!;

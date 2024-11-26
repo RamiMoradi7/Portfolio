@@ -30,7 +30,7 @@ export default function Services(): JSX.Element {
 
 
     return (
-        <section id="services" className="dark:bg-dark-main sm:p-10 lg:p-20 p-5">
+        <section id="services" className="dark:bg-dark-main sm:p-10 lg:p-20 p-10">
             <h2 className="text-center font-header text-4xl font-thin uppercase text-zinc-800 dark:text-green-400 sm:text-5xl lg:text-6xl">
                 Here's What I'm Good At
             </h2>
