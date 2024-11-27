@@ -6,12 +6,11 @@ export const useActiveSection = () => {
   const [isScrolling, setIsScrolling] = useState<boolean>(false);
   const location = useLocation();
   const navigate = useNavigate();
-
-
+  console.log(activeSection);
   useEffect(() => {
     const sections = document.querySelectorAll("section");
     const observerOptions = {
-      threshold: 0.7,
+      threshold: 0.5,
     };
 
     const observer = new IntersectionObserver((entries) => {
@@ -37,15 +36,20 @@ export const useActiveSection = () => {
 
   const scrollToSection = (id: string) => {
     const section = document.getElementById(id);
+
     if (location.pathname !== "/") {
-      navigate(`/#${id}`);
-      setActiveSection(id);
-      setIsScrolling(false);
+      navigate(`/`);
     }
+
     if (section) {
+      setIsScrolling(true);
+      window.history.pushState(null, "", `/#${id}`);
       section.scrollIntoView({ behavior: "smooth", block: "start" });
-      setActiveSection(id);
-      setIsScrolling(false);
+
+      setTimeout(() => {
+        setActiveSection(id);
+        setIsScrolling(false);
+      }, 500);
     }
   };
 
