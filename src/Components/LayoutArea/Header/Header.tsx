@@ -7,6 +7,7 @@ import NavItem from "./NavItem";
 export default function Header(): JSX.Element {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { activeSection, scrollToSection } = useActiveSection();
+
   return (
     <div className="fixed w-full dark:bg-dark-second dark:text-dark-txt bg-zinc-100 shadow-md z-50">
       <header className="py-4 px-6 md:px-10 border-b border-gray-200">
@@ -39,9 +40,7 @@ export default function Header(): JSX.Element {
           <nav className="md:hidden flex items-center">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className={`text-gray-800 focus:outline-none transition-transform duration-300 ${
-                isMenuOpen ? "rotate-90" : ""
-              } ml-2`} // Add margin-left here
+              className={`text-gray-800 focus:outline-none transition-transform duration-300 ${isMenuOpen ? "rotate-90" : ""} ml-2`}
             >
               <svg
                 className="w-8 h-8 dark:bg-dark-second dark:text-dark-txt"
@@ -49,12 +48,7 @@ export default function Header(): JSX.Element {
                 viewBox="0 0 24 24"
                 stroke="currentColor"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
               </svg>
             </button>
 
@@ -64,6 +58,7 @@ export default function Header(): JSX.Element {
           </nav>
         </div>
       </header>
+
       <nav
         className={`md:hidden dark:bg-dark-second dark:text-dark-txt bg-white w-full transition-all duration-300 ease-in-out ${
           isMenuOpen ? "block" : "hidden"

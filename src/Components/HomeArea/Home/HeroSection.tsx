@@ -32,9 +32,9 @@ export default function HeroSection(): JSX.Element {
       data-aos="fade-in"
     >
       <div className="dark:bg-dark-second container mx-auto text-center rounded-xl">
-        <div className="relative rounded-xl p-2">
+        <div className="relative  p-2">
           <img
-            className="rounded-full border-4 border-green-600 shadow-2xl w-96 h-60 sm:w-80 sm:h-80 mx-auto transition-transform duration-500 hover:scale-110 hover:rotate-2"
+            className="rounded-full border-2 dark:border-green-400 shadow-2xl w-60 h-60 sm:w-48 sm:h-48 md:w-56 md:h-56 lg:w-80 lg:h-80 mx-auto transition-transform duration-500 transform hover:scale-110 hover:rotate-2"
             src={profileImage}
             alt="Rami Moradi"
           />
