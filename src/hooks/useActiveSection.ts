@@ -6,7 +6,6 @@ export const useActiveSection = () => {
   const [isScrolling, setIsScrolling] = useState<boolean>(false);
   const location = useLocation();
   const navigate = useNavigate();
-  console.log(activeSection);
   useEffect(() => {
     const sections = document.querySelectorAll("section");
     const observerOptions = {
@@ -41,7 +40,7 @@ export const useActiveSection = () => {
       navigate(`/`);
     }
 
-    if (section) {
+    if (section && section.id !== activeSection) {
       setIsScrolling(true);
       window.history.pushState(null, "", `/#${id}`);
       section.scrollIntoView({ behavior: "smooth", block: "start" });
