@@ -9,8 +9,7 @@ export default function AboutMe(): JSX.Element {
         <div className="container mx-auto flex flex-col lg:flex-row items-center lg:gap-16">
           <div className="lg:w-1/2">
             <p className="font-raleway text-center text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-800 dark:text-white mb-4">
-              I'm Passionate About Building Scalable, High-Performing Web
-              Solutions
+              Building Scalable, High-Performance Web Solutions with Passion
             </p>
             <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed mb-6">
               Hello there! I'm a Full Stack Web Developer, passionate about

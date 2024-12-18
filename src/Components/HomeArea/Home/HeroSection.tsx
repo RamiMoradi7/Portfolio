@@ -66,12 +66,15 @@ export default function HeroSection() {
         <div className="h-image flex items-center justify-center w-[280px] h-[250px] xl:w-[350px] xl:h-[300px] relative mb-8 sm:mb-0">
           <div className="absolute inset-0 bg-gradient-to-br from-[#7CC0C4] via-[#548FBA] to-[#3C84C7] rounded-full opacity-40"></div>
           <img
-            className="w-full h-full max-w-[280px] xl:max-w-[350px] rounded-full shadow-xl transform transition duration-500 hover:scale-105"
+            className="w-full h-full max-w-[280px] xl:max-w-[350px] rounded-full shadow-xl transform transition duration-500 scale-105"
             src={profileImage}
             alt="Rami Moradi Full Stack Developer"
           />
         </div>
-        <div className="flex flex-col items-center justify-center max-w-[350px] mx-auto gap-4 mt-6">
+        <div
+          className="flex flex-col items-center justify-center max-w-[350px] mx-auto gap-4 mt-6"
+          data-aos="fade-in"
+        >
           <SocialButtons />
           <DownloadCV />
         </div>

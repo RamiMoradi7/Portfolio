@@ -7,7 +7,7 @@ export default function Experience(): JSX.Element {
 
   return (
     <section
-      className="lg:p-20 p-5 bg-gray-50 dark:bg-dark-main"
+      className="lg:p-20 p-2 bg-gray-50 dark:bg-dark-main"
       id="experience"
     >
       <div className="lg:container mx-auto">
