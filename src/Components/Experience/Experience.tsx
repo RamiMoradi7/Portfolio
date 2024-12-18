@@ -11,7 +11,7 @@ export default function Experience(): JSX.Element {
       id="experience"
     >
       <div className="lg:container mx-auto">
-        <h2 className="mb-3 text-center font-header text-4xl font-thin uppercase text-zinc-800 dark:text-green-400 sm:text-5xl lg:text-6xl">
+        <h2 className="mb-3 text-center font-header text-4xl font-thin uppercase bg-gradient-to-br bg-clip-text text-transparent from-[#7CC0C4] via-[#548FBA] to-[#3C84C7] sm:text-5xl lg:text-6xl">
           Experience
         </h2>
         <div className="lg:w-2/3 mx-auto">
@@ -29,7 +29,7 @@ export default function Experience(): JSX.Element {
                 className="w-full h-70 object-cover"
               />
               <div className="p-3 dark:bg-dark-second h-full">
-                <h3 className="text-xl font-semibold text-zinc-800 text-center dark:text-green-400">
+                <h3 className="text-xl font-semibold bg-gradient-to-br bg-clip-text text-transparent from-[#7CC0C4] via-[#548FBA] to-[#3C84C7] text-center ">
                   Fitness Tracker Application (Freelance)
                 </h3>
                 <ClickMeBtn />

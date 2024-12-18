@@ -16,7 +16,7 @@ export default function Skills(): JSX.Element {
                 <h2 className="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white mb-2 font-raleway">
                     Some of My
                 </h2>
-                <h2 className="text-4xl md:text-5xl font-extrabold text-green-600 dark:text-green-400 mb-10 font-raleway">
+                <h2 className="bg-gradient-to-br bg-clip-text text-transparent from-[#7CC0C4] via-[#548FBA] to-[#3C84C7] text-4xl md:text-5xl font-extrabold  mb-10 font-raleway">
                     Skills
                 </h2>
             </div>

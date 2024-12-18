@@ -18,7 +18,7 @@ export default function NavItem({ section, activeSection, onClick }: NavItemProp
                 {section.charAt(0).toUpperCase() + section.slice(1)}
             </a>
             <span
-                className={`absolute left-0 bottom-0 h-[2px] bg-green-400 transform transition-transform ease-out duration-500
+                className={`absolute left-0 bottom-0 h-[2px] bg-gradient-to-br from-[#7CC0C4] via-[#548FBA] to-[#3C84C7] hover:opacity-80 transform transition-transform ease-out duration-500
                 ${isActive ? "scale-x-100" : "scale-x-0"} origin-left`}
                 style={{ width: "100%" }}
             />

@@ -31,7 +31,7 @@ export default function Services(): JSX.Element {
 
     return (
         <section id="services" className="dark:bg-dark-main sm:p-10 lg:p-20 p-10">
-            <h2 className="text-center font-header text-4xl font-thin uppercase text-zinc-800 dark:text-green-400 sm:text-5xl lg:text-6xl">
+            <h2 className="text-center font-header text-4xl font-thin uppercase bg-gradient-to-br bg-clip-text text-transparent from-[#7CC0C4] via-[#548FBA] to-[#3C84C7] sm:text-5xl lg:text-6xl">
                 Here's What I'm Good At
             </h2>
             <div className="sm:container mx-auto mt-4">
@@ -50,7 +50,7 @@ export default function Services(): JSX.Element {
                     <a
                         href="#contact"
                         onClick={(e) => scrollToSection(e, "contact")}
-                        className="mt-4 inline-block px-6 py-2 text-white dark:text-dark-txt bg-green-500 hover:bg-green-600 rounded transition duration-300"
+                        className="mt-4 inline-block px-6 py-2 bg-gradient-to-br bg-clip-text text-transparent from-[#7CC0C4] via-[#548FBA] to-[#3C84C7] rounded transition duration-300"
                     >
                         Get in Touch
                     </a>

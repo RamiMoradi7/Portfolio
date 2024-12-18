@@ -12,11 +12,12 @@
 .contrast {
   background-color: black;
   color: white;
-  max-width: 100vw; 
+  max-width: 100vw;
   overflow-x: hidden;
 }
 
 body {
+  /* background-color: #08233b; */
   scroll-snap-type: y mandatory;
   max-width: 100%;
 }
@@ -113,35 +114,28 @@ html {
   font-size: 1.1em; /* Slightly increased font size */
   border-radius: 4px; /* Rounded corners for a modern look */
   padding: 8px 12px; /* Adequate padding for touch accessibility */
-  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transitions for better UX */
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .screen-reader-mode a:hover,
 .screen-reader-mode button:hover,
 .screen-reader-mode input:focus,
 .screen-reader-mode textarea:focus {
-  background-color: #0056b3; /* Darker hover/focus state for interactive elements */
+  background-color: #0056b3;
   color: #ffffff;
 }
 
-/* Announce important sections using landmarks with modern visuals */
 .screen-reader-mode [role="banner"],
 .screen-reader-mode [role="main"],
 .screen-reader-mode [role="contentinfo"],
 .screen-reader-mode [role="navigation"] {
-  border: 2px solid #00ff00; /* High contrast borders for landmarks */
-  border-radius: 6px; /* Rounded edges for a softer appearance */
-  padding: 8px; /* Add spacing around content */
-  margin: 8px 0; /* Vertical spacing between landmarks */
-  background-color: rgba(
-    0,
-    128,
-    0,
-    0.1
-  ); /* Subtle green background for landmarks */
+  border: 2px solid #00ff00;
+  border-radius: 6px;
+  padding: 8px;
+  margin: 8px 0;
+  background-color: rgba(0, 128, 0, 0.1);
 }
 
-/* Enhance link visibility with modern styles */
 .screen-reader-mode a {
   text-decoration: underline;
   color: #ff9900;
